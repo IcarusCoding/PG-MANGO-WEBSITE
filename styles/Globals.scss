@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  .h-nav-base {
+    @apply h-[54px]
+  }
+  .h-nav-full {
+    @apply h-[70px]
+  }
+  .max-w-inherit {
+    max-width: inherit;
+  }
+  .mango-text-primary {
+    @apply text-mango-gray-darker dark:text-mango-gray-lighter transition-colors
+  }
+  .mango-bg-text {
+    @apply bg-mango-gray-darker dark:bg-mango-gray-lighter transition-colors
+  }
+  .mango-gradient {
+    @apply bg-gradient-to-br dark:from-mango-slate-darker dark:to-mango-slate-dark from-mango-gray-light to-mango-gray-lighter transition-colors
+  }
+  .mango-bg-primary {
+    @apply dark:bg-mango-slate-dark bg-mango-gray-lighter transition-colors
+  }
+  .mango-bg-secondary {
+    @apply dark:bg-mango-dark bg-mango-gray-dark transition-colors
+  }
+}
+
+* {
+  user-select: none;
+}
