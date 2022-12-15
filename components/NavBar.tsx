@@ -7,6 +7,8 @@ import classNames from "classnames";
 // @ts-ignore
 import {Link} from "react-scroll";
 import {Disclosure} from "@headlessui/react";
+import ThemeSwitch from "./ThemeSwitch";
+import Hamburger from "./Hamburger";
 
 interface NavBarProperties {
 
@@ -68,7 +70,7 @@ const Nav = ({scrollWithViewport, logoSrc, logoWidth, logoHeight, children}: Nav
                 <div className="flex flex-wrap w-full mx-auto lg:hidden px-8 py-2">
                     <div className="flex flex-1 items-center">
                         <Disclosure.Button>
-                            {/*TODO Add Hamburger*/}
+                            <Hamburger/>
                         </Disclosure.Button>
                     </div>
                     <div className="mx-12 h-nav-base">
@@ -76,7 +78,8 @@ const Nav = ({scrollWithViewport, logoSrc, logoWidth, logoHeight, children}: Nav
                                onDragStart={evt => evt.preventDefault()}/>
                     </div>
                     <div className="flex flex-1 items-center justify-end">
-                        {/*TODO Add ThemeSwitch*/}
+                        <ThemeSwitch id="switch-disclosure" darkMode={theme === 'dark'}
+                                     toggleFunc={() => toggleDarkMode()}/>
                     </div>
                     <Disclosure.Panel className="flex flex-wrap w-full">
                         <ul className="flex flex-col">
@@ -87,7 +90,8 @@ const Nav = ({scrollWithViewport, logoSrc, logoWidth, logoHeight, children}: Nav
             </Disclosure>
             <div className="hidden lg:flex items-center px-8 py-2">
                 <div className="flex flex-1 h-nav-base">
-                    <Image src={logoSrc} alt="logo" width={logoWidth} height={logoHeight} onDragStart={evt => evt.preventDefault()}/>
+                    <Image src={logoSrc} alt="logo" width={logoWidth} height={logoHeight}
+                           onDragStart={evt => evt.preventDefault()}/>
                 </div>
                 <div className="mx-12">
                     <ul className="flex md:space-x-8">
@@ -95,7 +99,7 @@ const Nav = ({scrollWithViewport, logoSrc, logoWidth, logoHeight, children}: Nav
                     </ul>
                 </div>
                 <div className="flex flex-1 justify-end">
-                    {/*TODO Add ThemeSwitch*/}
+                    <ThemeSwitch id="switch-normal" darkMode={theme === 'dark'} toggleFunc={() => toggleDarkMode()}/>
                 </div>
             </div>
         </nav>
