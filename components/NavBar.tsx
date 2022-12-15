@@ -4,9 +4,10 @@ import Image from "next/image";
 import {useTheme} from "next-themes";
 
 import classNames from "classnames";
+import {Disclosure} from "@headlessui/react";
 // @ts-ignore
 import {Link} from "react-scroll";
-import {Disclosure} from "@headlessui/react";
+
 import ThemeSwitch from "./ThemeSwitch";
 import Hamburger from "./Hamburger";
 
