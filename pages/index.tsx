@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import NavBar from "../components/NavBar";
+import Project from "../components/Project";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
                 <NavBar.Item name="Projekt" scrollTo="projectSection"/>
                 <NavBar.Item name="Downloads" scrollTo="downloadsSection"/>
             </NavBar>
+            <Project/>
         </>
     )
 };
