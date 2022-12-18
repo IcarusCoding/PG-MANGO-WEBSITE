@@ -3,6 +3,7 @@ import Head from "next/head";
 import NavBar from "../components/NavBar";
 import Project from "../components/Project";
 import Section from "../components/Section";
+import Downloads, {Download, FileType} from "../components/Downloads";
 
 const Home = () => {
     return (
@@ -35,7 +36,11 @@ const Home = () => {
             </Section>
             <Section id="downloadsSection" className="mango-bg-secondary" caption="Downloads"
                      subCaption="Im Rahmen der Projektgruppe wurden verschiedene Dokumente, Präsentationen und Diagramme angefertigt, welche hier zum Download bereitgestellt werden.">
-                <div/>
+                <Downloads>
+                    <Download fileName={"Endpräsentation"} fileType={FileType.PPT} fileSize={"10 MB"} downloadLink={"file/Test.pptx"}/>
+                    <Download fileName={"Projektdokumentation"} fileType={FileType.PDF} fileSize={"8 MB"} downloadLink={"file/Test.pdf"}/>
+                    <Download fileName={"Architektur"} fileType={FileType.PNG} fileSize={"12 MB"} downloadLink={"file/Test.png"}/>
+                </Downloads>
             </Section>
         </>
     )
