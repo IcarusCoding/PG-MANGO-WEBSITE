@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Project from "../components/Project";
 import Section from "../components/Section";
 import Downloads, {Download, FileType} from "../components/Downloads";
+import Footer from "../components/Footer";
 
 const Home = () => {
     return (
@@ -42,6 +43,7 @@ const Home = () => {
                     <Download fileName={"Architektur"} fileType={FileType.PNG} fileSize={"12 MB"} downloadLink={"file/Test.png"}/>
                 </Downloads>
             </Section>
+            <Footer/>
         </>
     )
 };
