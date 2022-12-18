@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import NavBar from "../components/NavBar";
+import Hero from "../components/Hero";
 import Project from "../components/Project";
 import Section from "../components/Section";
 import Downloads, {Download, FileType} from "../components/Downloads";
@@ -21,7 +22,8 @@ const Home = () => {
                 <NavBar.Item name="Downloads" scrollTo="downloadsSection"/>
             </NavBar>
             <Section id="startSection" className="mango-bg-primary">
-                <div/>
+                <Hero caption={<>Projektgruppe<br/>MANGO</>}
+                      subCaption={"Die Projektgruppe MANGO hat das Ziel, eine zuverlässige und sichere Datenübertragung zwischen Schiffen und Land zu gewährleisten, indem die Daten landseitig synchronisiert und mit standardisierten Schnittstellen angefordert werden können."} imgSrc="/hero.png" imgHeight={540} imgWidth={500}/>
             </Section>
             <Section id="teamSection" className="mango-bg-secondary" caption="Das Team"
                      subCaption="Das Team der Projektgruppe besteht aus zwölf Studenten der Masterstudiengänge Wirtschaftsinformatik und Informatik. Im Rahmen des Projekts nehmen verschiedene Teammitglieder unterschiedliche Gruppe und Rollen ein.">
