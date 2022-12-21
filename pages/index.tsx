@@ -1,3 +1,5 @@
+import {Key} from "react";
+
 import Head from "next/head";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
 
@@ -9,6 +11,7 @@ import Project from "../components/Project";
 import Section from "../components/Section";
 import Downloads, {Download, FileType} from "../components/Downloads";
 import Footer from "../components/Footer";
+import Team from "../components/Team";
 
 type MemberProperties = {
 
@@ -62,7 +65,21 @@ const Home = ({members}: InferGetStaticPropsType<typeof getStaticProps>) => {
             </Section>
             <Section id="teamSection" className="mango-bg-secondary" caption="Das Team"
                      subCaption="Das Team der Projektgruppe besteht aus zwölf Studenten der Masterstudiengänge Wirtschaftsinformatik und Informatik. Im Rahmen des Projekts nehmen verschiedene Teammitglieder unterschiedliche Gruppe und Rollen ein.">
-                <div/>
+                {members ?
+                    <Team>
+                        {
+                            members.map(({ id, firstName, lastName, degree, group, task }: MemberProperties, idx: Key) => (
+                                <Team.Entry key={idx} name={`${firstName} ${lastName}`} degree={degree} task={task}
+                                            group={group} img={`/img/avatar/${id}.png`}/>
+                            ))
+                        }
+                    </Team> :
+                    <div className="mx-auto text-center p-8">
+                        <div className="bg-red-900">
+                            Error
+                        </div>
+                    </div>
+                }
             </Section>
             <Section id="projectSection" className="mango-bg-primary"
                      captionClasses="text-gray-600 dark:text-mango-gray-lighter"
