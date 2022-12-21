@@ -1,4 +1,7 @@
 import Head from "next/head";
+import {GetStaticProps, InferGetStaticPropsType} from "next";
+
+import prisma from "../lib/prisma";
 
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
@@ -7,7 +10,39 @@ import Section from "../components/Section";
 import Downloads, {Download, FileType} from "../components/Downloads";
 import Footer from "../components/Footer";
 
-const Home = () => {
+type MemberProperties = {
+
+    id: string
+    firstName: string
+    lastName: string
+    degree: string
+    group: string
+    task: string
+
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+    try {
+        const members: Array<MemberProperties> = await prisma.member.findMany({
+            orderBy: [
+                {
+                    lastName: 'asc'
+                }
+            ]
+        });
+        return {
+            props: {members},
+            revalidate: 2
+        };
+    } catch (e) {}
+    return {
+        props: {members: null},
+        revalidate: 2
+    };
+
+};
+
+const Home = ({members}: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <Head>
