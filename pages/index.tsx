@@ -12,6 +12,7 @@ import Section from "../components/Section";
 import Downloads, {Download, FileType} from "../components/Downloads";
 import Footer from "../components/Footer";
 import Team from "../components/Team";
+import WaveWrapper from "../components/WaveWrapper";
 
 type MemberProperties = {
 
@@ -59,7 +60,7 @@ const Home = ({members}: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <NavBar.Item name="Projekt" scrollTo="projectSection"/>
                 <NavBar.Item name="Downloads" scrollTo="downloadsSection"/>
             </NavBar>
-            <Section id="startSection" className="mango-bg-primary">
+            <Section id="startSection" className="mango-bg-primary" end={<WaveWrapper/>}>
                 <Hero caption={<>Projektgruppe<br/>MANGO</>}
                       subCaption={"Die Projektgruppe MANGO hat das Ziel, eine zuverlässige und sichere Datenübertragung zwischen Schiffen und Land zu gewährleisten, indem die Daten landseitig synchronisiert und mit standardisierten Schnittstellen angefordert werden können."} imgSrc="/hero.png" imgHeight={540} imgWidth={500}/>
             </Section>
