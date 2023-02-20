@@ -37,12 +37,12 @@ const Feats = ({preFeat, postFeat, title, subtitle, children}: FeaturesPropertie
                 </div>
             }
             <div className="flex flex-col mb-6 lg:flex-row md:mb-10">
-                <div className="lg:w-1/3">
+                <div className="lg:w-1/4">
                     <h2 className="max-w-md mb-6 font-sans text-3xl font-bold tracking-tight text-gray-700 dark:text-gray-300 sm:text-4xl sm:leading-none xl:max-w-lg transition-colors">
                         {title}
                     </h2>
                 </div>
-                <div className="lg:w-2/3">
+                <div className="lg:w-3/4">
                     <p className="text-base text-gray-700 dark:text-gray-300 md:text-lg transition-colors">
                         {subtitle}
                     </p>

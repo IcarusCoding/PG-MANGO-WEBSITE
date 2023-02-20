@@ -87,7 +87,7 @@ const Home = ({members}: InferGetStaticPropsType<typeof getStaticProps>) => {
                      dividerClasses="bg-gray-600 dark:bg-mango-gray-lighter"
                      subCaptionClasses="text-gray-500 dark:text-mango-gray-lighter"
                      caption="Das Projekt"
-                     subCaption="In diesem Abschnitt wird das Projekt vorgestellt, darunter die Projektmotivation, sowie die Architektur und die Funktionsweise der einzelnen Komponenten.">
+                     subCaption="In diesem Abschnitt wird das Projekt vorgestellt, darunter die Projektmotivation, sowie die Funktionen mit den jeweiligen Komponenten.">
                 <Project/>
             </Section>
             <Section id="downloadsSection" className="mango-bg-secondary" caption="Downloads"
