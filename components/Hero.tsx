@@ -20,7 +20,8 @@ const Hero = ({caption, subCaption, imgSrc, imgWidth, imgHeight}: HeroProperties
                 <p className="text-xl py-5 xl:text-2xl">{subCaption}</p>
             </div>
             <div className="hidden md:flex">
-                <Image src={imgSrc} alt="hero-image" height={imgHeight} width={imgWidth} className="drop-shadow-md" onDragStart={evt => evt.preventDefault()}/>
+                <Image src={imgSrc} alt="hero-image" height={imgHeight} width={imgWidth}
+                       className="drop-shadow-md" onDragStart={evt => evt.preventDefault()}/>
             </div>
         </div>
     );

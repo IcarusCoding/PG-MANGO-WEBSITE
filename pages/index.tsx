@@ -52,7 +52,7 @@ const Home = ({members}: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Head>
                 <title>Projektgruppe Mango</title>
                 <meta name="description" content="A website for the MANGO project group"/>
-                <link rel="icon" type="image/x-icon" href="/icon/mango-small.svg"/>
+                <link rel="icon" type="image/x-icon" href="./icon/mango-small.svg"/>
             </Head>
             <NavBar logoSrc={'/icon/mango-small.svg'} logoWidth={46} logoHeight={52}>
                 <NavBar.Item name="Start" scrollTo="startSection"/>
